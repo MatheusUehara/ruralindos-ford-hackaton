@@ -2,8 +2,13 @@ package com.applink.ford.hellosdlandroid;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.renderscript.Double2;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+
+import dao.VeiculoDAO;
+import dominio.Veiculo;
 
 public class MainActivity extends Activity {
 
@@ -11,6 +16,24 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        /*Veiculo v = new Veiculo();
+        v.setId("uiashusaiahsiah");
+        v.setAno(2016);
+        v.setCor("preto");
+        v.setModelo("focus");
+        v.setPlaca("oko-8798");
+        v.setSenha("naonula");
+        v.setLatitude(1.00000000);
+        v.setLongitude(1.00000000);*/
+
+        VeiculoDAO veiculoDAO = VeiculoDAO.getInstance();
+        veiculoDAO.setContextUp(this);
+
+        Veiculo v = veiculoDAO.buscarVeiculo("uiashusaiahsiah");
+
+        Log.i("Veículo lat", Double.toString(v.getLatitude()));
+
     }
 
     @Override

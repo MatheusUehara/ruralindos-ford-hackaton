@@ -1,25 +1,7 @@
-# ruralindos-ford-hackaton
+# Ruralindos Ford Hackaton
 
-max 8 botões na tela 
-tela de texto - utilizar apenas para guia
-notificações
-send location
+Aplicativo tem como objetivo perceber cenários que ofereçam perigo ao motorista utilizando o AppLink da Ford.
 
-
-requisitos 
-utilizar ao menos um dado dos sensores do veiculo  - getVeicleData
-
-HMI - segurança, praticidadem usabilidade, organização, simplicidade - TEREZA
-
-originalidade
-
-Comercialização
-
-dentro do contexto cidade conectada
-
-Comando RPC 
-
-
-Tela de bloqueio - WIDGET
-
-
+Equipe - Matheus Uehara
+Igor Gomes 
+Daivid Vasconcelos

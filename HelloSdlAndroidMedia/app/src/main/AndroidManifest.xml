@@ -15,11 +15,11 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name=".MainActivity"
+            android:name="gui.SplashAct"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -35,6 +35,12 @@
                 <action android:name="android.media.AUDIO_BECOMING_NOISY" />
             </intent-filter>
         </receiver>
+		
+		<activity android:name=".MainActivity"/>
+        <activity android:name="gui.FirstLoginAct" />
+        <activity android:name="gui.CadastraVeiculoAct" />
+        <activity android:name="gui.CadastraSenhaAct" />
+        <activity android:name="gui.ConfirmaCadastroAct"/>
     </application>
 
 </manifest>

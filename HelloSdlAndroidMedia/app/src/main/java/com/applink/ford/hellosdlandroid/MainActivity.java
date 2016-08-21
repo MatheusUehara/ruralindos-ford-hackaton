@@ -1,14 +1,15 @@
 package com.applink.ford.hellosdlandroid;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
-import android.renderscript.Double2;
 import android.util.Log;
-import android.view.Menu;
-import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 
 import dao.VeiculoDAO;
 import dominio.Veiculo;
+import gui.CadastraVeiculoAct;
 
 public class MainActivity extends Activity {
 
@@ -30,31 +31,23 @@ public class MainActivity extends Activity {
         VeiculoDAO veiculoDAO = VeiculoDAO.getInstance();
         veiculoDAO.setContextUp(this);
 
-        Veiculo v = veiculoDAO.buscarVeiculo("uiashusaiahsiah");
+        Veiculo v = veiculoDAO.buscarVeiculo("12345678890");
 
         Log.i("Veículo lat", Double.toString(v.getLatitude()));
 
+        Button fab = (Button) findViewById(R.id.fab);
+
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(MainActivity.this, CadastraVeiculoAct.class);
+                startActivity(i);
+            }
+        });
+
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
-    }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
 
-        return super.onOptionsItemSelected(item);
-    }
 }
